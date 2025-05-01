@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Salón Oscuro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="story-title">
+            <h1>El Salón Oscuro</h1>
+            <div id="player-form">
+                <div class="input-group">
+                    <label for="player-name">Tu nombre:</label>
+                    <input type="text" id="player-name" placeholder="Escribe tu nombre" required>
+                </div>
+                <div class="input-group">
+                    <label for="friend-name">Nombre de tu mejor amigo:</label>
+                    <input type="text" id="friend-name" placeholder="Escribe el nombre" required>
+                </div>
+            </div>
+            <button id="start-btn" disabled>Comenzar</button>
+        </div>
+
+        <div id="passage-container" class="hidden">
+            <div id="passage-content"></div>
+            <div id="passage-choices"></div>
+        </div>
+    </div>
+    
+    <!-- Precargar audio -->
+    <audio id="ghost-scream" src="sounds/terror-scream-grito-terror-101302.mp3" preload="auto"></audio>
+
+    <script src="story-data.js"></script>
+    <script src="game-engine.js"></script>
+</body>
+</html>
+
+//prueba
