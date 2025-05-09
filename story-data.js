@@ -110,7 +110,7 @@ const storyData = {
             ]
         },
         "Buscar a un profesor o guardia": {
-            text: "Gabriel busca ayuda.<br><br><b>GABRIEL:</b> Tengo que encontrar a alguien que... (interrumpido)<br><br>Al doblar en un pasillo, se encuentra nuevamente con la mujer de blanco.",
+            text: "Gabriel busca ayuda.<br><br><b>GABRIEL:</b> Tengo que encontrar a alguien que... <br><br>Al doblar en un pasillo, se encuentra nuevamente con la mujer de blanco.",
             image: "https://us.123rf.com/450wm/champlifezy/champlifezy1906/champlifezy190600015/125824540-mujer-fantasma-escena-de-terror-pel%C3%ADcula-de-muerte-con-maquillaje-de-halloween-sosteniendo-una-pared.jpg",
             imageAlt: "Mujer fantasma esquina",
             text2: "<br><br><i>Final fatal 3</i>",

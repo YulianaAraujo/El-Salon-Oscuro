@@ -228,8 +228,8 @@ voicesound.currentTime = 0;
             
             // También reproducir el grito después de 5 segundos
             setTimeout(() => {
-                ghostScream2.volume = 0.7;
-                ghostScream2.play();
+                runsound.volume = 0.7;
+                run.play();
             }, 2000);
             break;
             case "Salir inmediatamente del salón":
@@ -318,6 +318,10 @@ voicesound.currentTime = 0;
         }, 1000);
     }, 1000); // Espera de 1 segundo antes de iluminar
     break;
+    case "Correr hacia la puerta": // Cambia "Noticia" por el pasaje que tú quieras
+    breatsound.currentTime = 0; 
+    breatsound.volume = 0.6;
+    breatsound.play();
     }
 }
 

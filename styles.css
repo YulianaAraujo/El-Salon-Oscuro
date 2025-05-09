@@ -374,3 +374,8 @@ img.zoom-toggle.zoomed {
     z-index: 10;
     position: relative;
 }
+
+#youtube-player {
+width: 80vw;
+height: 45vw; /* proporción 16:9 */
+}
