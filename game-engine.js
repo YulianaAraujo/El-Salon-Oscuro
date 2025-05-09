@@ -7,8 +7,16 @@ const passageChoices = document.getElementById('passage-choices');
 const playerNameInput = document.getElementById('player-name');
 const friendNameInput = document.getElementById('friend-name');
 const ghostScream = document.getElementById('ghost-scream');
+const ghostScream2 = document.getElementById('ghost-scream2');
+const ghostScream3 = document.getElementById('ghost-scream3');
 const stepSound = document.getElementById('step-sound');
-
+const criyingsound = document.getElementById('criying-sound');
+const runsound = document.getElementById('run-sound');
+const moansound = document.getElementById('moan-sound');
+const heartsound = document.getElementById('heart-sound');
+const breatsound = document.getElementById('breat-sound');
+const voicesound = document.getElementById('voice-sound');
+const callsound = document.getElementById('call-sound');
 // Game state
 let currentPassage = null;
 let gameHistory = [];
@@ -94,9 +102,13 @@ function loadPassage(passageName) {
     // Add image if present
     if (passage.image) {
         const img = document.createElement('img');
-        img.src = passage.image;
-        img.alt = passage.imageAlt || '';
-        passageContent.appendChild(img);
+    img.src = passage.image;
+    img.alt = passage.imageAlt || '';
+    img.classList.add('zoom-toggle');
+    img.addEventListener('click', () => {
+        img.classList.toggle('zoomed');
+    });
+    passageContent.appendChild(img);
     }
     
     // Add additional text content if present
@@ -168,19 +180,35 @@ function loadPassage(passageName) {
     // Scroll to top
     window.scrollTo(0, 0);
     // Reproducir pasos si el pasaje es de caminar
-if (passageName === "Noticia" || passageName === "Entrar al salón") {
-    stepSound.currentTime = 0; // reinicia el sonido
-    stepSound.volume = 0.6;    // ajusta volumen
-    stepSound.play();
-}
+
+
     // Special effects for certain passages
     // You can add passage-specific effects here if needed
     handleSpecialPassageEffects(passageName);
     
 }
-
+document.body.style.backgroundImage = ""; // limpia cualquier fondo
 // Handle special effects for specific passages
 function handleSpecialPassageEffects(passageName) {
+    document.body.style.backgroundImage = "";runsound.pause();
+runsound.currentTime = 0;
+stepSound.pause();
+stepSound.currentTime = 0;
+criyingsound.pause();
+criyingsound.currentTime = 0;
+runsound.pause();
+runsound.currentTime = 0;
+moansound.pause();
+moansound.currentTime = 0;
+heartsound.pause();
+heartsound.currentTime = 0;
+voicesound.pause();
+voicesound.currentTime = 0;
+breatsound.pause();
+breatsound.currentTime = 0;
+voicesound.pause();
+voicesound.currentTime = 0;
+
     // Example:
     switch(passageName) {
         
@@ -200,16 +228,29 @@ function handleSpecialPassageEffects(passageName) {
             
             // También reproducir el grito después de 5 segundos
             setTimeout(() => {
-                ghostScream.volume = 0.7;
-                ghostScream.play();
-            }, 5000);
+                ghostScream2.volume = 0.7;
+                ghostScream2.play();
+            }, 2000);
             break;
+            case "Salir inmediatamente del salón":
+            // Add screen shake effect
+            document.body.classList.add('shake');
+            setTimeout(() => {
+                document.body.classList.remove('shake');
+            }, 2000);
         case "Intentar esquivar corriendo por el lado":
             // Reproducir el grito después de 4 segundos
             setTimeout(() => {
-                ghostScream.volume = 0.7;
-                ghostScream.play();
-            }, 4000);
+                ghostScream3.volume = 0.7;
+                ghostScream3.play();
+            }, 3000);
+            break;
+             case "Investigar el origen del llanto":
+            // Reproducir el grito después de 4 segundos
+            setTimeout(() => {
+                moansound.volume = 0.7;
+                moansound.play();
+            }, 3000);
             break;
         case "Buscar a un profesor o guardia":
             // Reproducir el grito después de 3 segundos
@@ -224,6 +265,58 @@ function handleSpecialPassageEffects(passageName) {
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundRepeat = "no-repeat";
+    break;
+    case "Continuar con la historia":
+    // Inicia la llamada
+    callsound.currentTime = 0;
+    callsound.volume = 0.6;
+    callsound.play();
+
+    // Cortar llamada a los 1.5 segundos
+    setTimeout(() => {
+        callsound.pause();
+        callsound.currentTime = 0;
+    }, 1500);
+
+    // Reproducir la voz a los 2.5 segundos
+    setTimeout(() => {
+        voicesound.currentTime = 0;
+        voicesound.volume = 0.6;
+        voicesound.play();
+    }, 2500);
+    break;
+    case "Noticia": // Cambia "Noticia" por el pasaje que tú quieras
+    stepSound.currentTime = 0;
+    stepSound.volume = 0.6;
+    stepSound.play();
+    break;
+    case "Entrar al salón": // Cambia "Noticia" por el pasaje que tú quieras
+    criyingsound.currentTime = 0; 
+    criyingsound.volume = 0.6;
+    criyingsound.play();
+    break;
+    case "Ignorar el marcador": // Cambia "Noticia" por el pasaje que tú quieras
+    runsound.currentTime = 0; 
+    runsound.volume = 0.6;
+    runsound.play();
+    break;
+    case "Salir inmediatamente del salón": // Cambia "Noticia" por el pasaje que tú quieras
+    runsound.currentTime = 0; 
+    runsound.volume = 0.6;
+    runsound.play();
+    break;
+    case "Entrar al salón":
+    setTimeout(() => {
+        const lightFlash = document.getElementById('light-flash');
+        lightFlash.style.animation = "flashLight 1s ease";
+        lightFlash.classList.remove('hidden');
+
+        // Limpia la animación después de que se reproduzca
+        setTimeout(() => {
+            lightFlash.style.animation = "none";
+            lightFlash.classList.add('hidden');
+        }, 1000);
+    }, 1000); // Espera de 1 segundo antes de iluminar
     break;
     }
 }

@@ -31,7 +31,7 @@ const storyData = {
             text2: "<br><br><b>EDWARD:</b> ¿Ya estás en el salón? Ya casi llego.<br><br><b>GABRIEL:</b> Sí, estoy en la cafetería comprándome un café. ¿Vienes aquí o me esperas en el salón?<br><br><b>EDWARD:</b> Nah, man. Ya casi llego al salón, mejor te espero allí.<br><br>Gabriel llega al pasillo frente al salón. Un marcador rueda desde el interior hacia afuera.<br><br><b>GABRIEL:</b> Acaba de pasar algo muy raro. Mira, ese marcador vino de adentro, pero el salón está todo <span class='flicker'>oscuro.</span><br><br><b>EDWARD:</b> ¿Por qué no entras?<b>¿No tienes huevos?</b>",
             choices: [
                 { text: "Entrar al salón", passage: "Entrar al salón" },
-                { text: "Ignorar el marcador", passage: "Ignorar el marcador" }
+                { text: "No tengo huevos", passage: "Ignorar el marcador" }
             ]
         },
         "Entrar al salón": {
@@ -61,7 +61,7 @@ const storyData = {
             ]
         },
         "Salir inmediatamente del salón": {
-            text: "<b>GABRIEL:</b> No sé qué demonios es eso, pero no me quedaré a averiguarlo.<br><br><b>EDWARD:</b> ¡Bien hecho! Ven a la cafetería, rápido.<br><br>Gabriel corre hacia la puerta y sale del salón a toda prisa.",
+            text: "<b>GABRIEL:</b> No sé qué demonios es eso, pero no me quedaré a averiguarlo.<br><br><b>EDWARD:</b> ¡Bien hecho! Ven a la cafetería, rápido.<br><br>Gabriel <p><span class='shake'>corre </span></p><br>hacia la puerta y sale del salón a toda prisa.",
             image: "https://i.postimg.cc/g0Gd7gsz/Whats-App-Image-2025-04-11-at-17-17-50.jpg",
             imageAlt: "Hombre corriendo",
             text2: "<br><br><i>Final alternativo 2</i>",

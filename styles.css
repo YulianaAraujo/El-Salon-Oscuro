@@ -321,3 +321,56 @@ img {
 .choice-btn img:hover {
     transform: scale(1.2);
 }
+#passage-container {
+    background-color: rgba(0, 0, 0, 0.8); /* para permitir que el fondo se vea detrás del texto */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#light-flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    animation: none;
+}
+
+@keyframes flashLight {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    100% { opacity: 0; }
+}
+#light-flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    animation: none;
+}
+
+@keyframes flashLight {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+img.zoom-toggle {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+img.zoom-toggle.zoomed {
+    transform: scale(1.8);
+    z-index: 10;
+    position: relative;
+}
