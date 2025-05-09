@@ -296,3 +296,28 @@ img {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+.intro-text {
+    font-family: 'Creepster', cursive;
+    font-size: 2.5rem;
+    color: darkred;
+    margin-bottom: 20px;
+    animation: pulse 3s infinite;
+    text-align: center;
+}
+
+.intro-subtext {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 30px;
+    font-style: italic;
+    text-align: center;
+}
+.choice-btn img {
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.choice-btn img:hover {
+    transform: scale(1.2);
+}

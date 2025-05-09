@@ -7,6 +7,7 @@ const passageChoices = document.getElementById('passage-choices');
 const playerNameInput = document.getElementById('player-name');
 const friendNameInput = document.getElementById('friend-name');
 const ghostScream = document.getElementById('ghost-scream');
+const stepSound = document.getElementById('step-sound');
 
 // Game state
 let currentPassage = null;
@@ -154,6 +155,7 @@ function loadPassage(passageName) {
                 // Remove transition class
                 passageContainer.classList.remove('fade-transition');
                 
+
                 // Short delay for effect
                 setTimeout(() => {
                     loadPassage(choice.passage);
@@ -165,16 +167,23 @@ function loadPassage(passageName) {
     
     // Scroll to top
     window.scrollTo(0, 0);
-    
+    // Reproducir pasos si el pasaje es de caminar
+if (passageName === "Noticia" || passageName === "Entrar al salón") {
+    stepSound.currentTime = 0; // reinicia el sonido
+    stepSound.volume = 0.6;    // ajusta volumen
+    stepSound.play();
+}
     // Special effects for certain passages
     // You can add passage-specific effects here if needed
     handleSpecialPassageEffects(passageName);
+    
 }
 
 // Handle special effects for specific passages
 function handleSpecialPassageEffects(passageName) {
     // Example:
     switch(passageName) {
+        
         case "Intentar hablar con la figura":
             // Reproducir el grito después de 5 segundos
             setTimeout(() => {
@@ -210,6 +219,12 @@ function handleSpecialPassageEffects(passageName) {
             }, 3000);
             break;
         // Add more special cases as needed
+        case "periódico":
+    document.body.style.backgroundImage = "url('imagenes/Fondo.jpg')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    break;
     }
 }
 

@@ -3,15 +3,17 @@ const storyData = {
     startPassage: "Menú de inicio",
     passages: {
         "Menú de inicio": {
-            text: "",
-            choices: [
-                { text: "Comenzar", passage: "Noticia" }
+            text: "<h2 class='intro-text'>Una sombra se cierne sobre la facultad...</h2><p class='intro-subtext'> Dicen que hay puertas que nunca debieron abrirse...</p>",
+    choices: [
+
+                { text: "Atrévete a entrar", passage: "Noticia" }
             ]
         },
         "Noticia": {
             text: "Vas caminando en la calle y cuando estás a punto de entrar a la facultad ves una página de un periódico.",
             choices: [
-                { text: "Recoger el periódico", passage: "periódico" }
+                { text: "<img src='imagenes/Periodico.png' alt='Recoger periódico' style='height: 80px;'>",
+            passage: "periódico" }
             ]
         },
         "periódico": {
